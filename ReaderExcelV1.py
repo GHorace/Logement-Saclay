@@ -10,6 +10,5 @@ import xlrd
 wb = xlrd.open_workbook('.xls')
 
 class eleve :
-    
     def _init_(self):
         self.critere1 = 0
