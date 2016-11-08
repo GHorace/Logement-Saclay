@@ -13,7 +13,10 @@ class caissier:
         self.critere3=critere3
 
 class grape:
+    nombre_grape=0
     def __init__(self,taille,):
+        grape.nombre_grape+=1
         self.taille=taille
+        self.zbeul=0
 
 
