@@ -7,9 +7,15 @@ fonction
 
 import xlrd
 
-wb = xlrd.open_workbook('.xls')
 
-class eleve :
+
+wb = xlrd.open_workbook('fichier test.xlsx')
+
+def fonction_retour_element(colonne, ligne):
+    ensemble_feuilles = wb.sheet_names()
+    feuille1 = wb.sheet_by_name(u'Feuil1')
+    col = ensemble_feuilles.col_values(colonne)
+    return (col[ligne])
     
-    def _init_(self):
-        self.critere1 = 0
+print (fonction_retour_element(0,0))
+    
