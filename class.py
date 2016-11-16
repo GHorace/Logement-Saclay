@@ -38,9 +38,8 @@ class residence:
         residence.liste_id_batiement=liste_id_batiement
 
 
+print(1)
         
         
-        
-print(3)
 
 
