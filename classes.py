@@ -1,12 +1,19 @@
-import xlrd
+# -*- coding: utf-8 -*-
+"""
+Premier fichier Projet Innovation : définition class
 
+"""
 
 class caissier:
-    def _init_(self):
-        self.critere1=0
-        self.critere2=0
-        self.critere3=0
+    nombre_caissier=0
+    def __init__(self,critere1,critere2,critere3):
+        caissier.nombre_caissier +=1
+        self.critere1=critere1
+        self.critere2=critere2
+        self.critere3=critere3
 
-#extraction données excel
+class grape:
+    def __init__(self,taille,):
+        self.taille=taille
 
 

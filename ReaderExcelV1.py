@@ -16,6 +16,5 @@ def fonction_retour_element(colonne, ligne):
     feuille1 = wb.sheet_by_name(u'Feuil1')
     col = ensemble_feuilles.col_values(colonne)
     return (col[ligne])
-    
 print (fonction_retour_element(0,0))
     
