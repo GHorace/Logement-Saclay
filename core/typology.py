@@ -21,9 +21,9 @@ class room:
 class grouping:
     number_grouping=0
     def __init__(self,id_grouping,list_id_room):
-        grouping.id_groupement=id_grouping
+        grouping.id_grouping=id_grouping
         grouping.number_grouping+=1
-        self.size=len(liste_id_chambre)
+        self.size=len(list_id_room)
         self.list_id_room=list_id_room
 
 class building:
