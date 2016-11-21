@@ -2,7 +2,7 @@
 """
 class definition
 """
-from sqlalchemy import Table, Column, Integer, String, ForeignKey
+from sqlalchemy import Table, Column, Integer, String, ForeignKey, Float, Boolean
 from sqlalchemy.orm import relationship
 from core.db import Base
 
@@ -15,6 +15,11 @@ class Building(Base):
     __tablename__ = 'buildings'
     id = Column(Integer, primary_key=True)
     bundles = relationship("Bundle", back_populates="building")
+    name = Column(String)
+    newBuilding = Column(Boolean)
+
+    def getDistanceTo(self, building):
+        return 0
 
 # Représente un groupement de chambres (un étage ou une "grappe" de chambres)
 class Bundle(Base):
@@ -23,6 +28,10 @@ class Bundle(Base):
     rooms = relationship("Room", back_populates="bundle")
     building_id = Column(Integer, ForeignKey('buildings.id'))
     building = relationship("Building", back_populates="bundles")
+    name = Column(String)
+
+    def getDistanceTo(self, bundle):
+        return 0
 
 # Représente une chambre
 class Room(Base):
@@ -31,10 +40,9 @@ class Room(Base):
     residents = relationship("Resident", back_populates="room")
     bundle_id = Column(Integer, ForeignKey('bundles.id'))
     bundle = relationship("Bundle", back_populates="rooms")
+    name = Column(String)
+    capacity = Column(Integer)
+    pricePerResident = Column(Float)
 
-# Représente un résident
-class Resident(Base):
-    __tablename__ = 'residents'
-    id = Column(Integer, primary_key=True)
-    room_id = Column(Integer, ForeignKey('rooms.id'))
-    room = relationship("Room", back_populates="residents")
+    def getDistanceTo(self, room):
+        return 0
