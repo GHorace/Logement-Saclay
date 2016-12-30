@@ -39,15 +39,15 @@ class excel_gestion():
     def creation (self, nom):
         self.book.save(nom)
 
-print("Test")
+#print("Test")
 
-print(lire_excel("Test3", 1, 1, 1))
+#print(lire_excel("Test3", 1, 1, 1))
 
-print(lire_excel("Test3", 2, 2, 2))
+#print(lire_excel("Test3", 2, 2, 2))
 
-print (lire_nom_feuille("Test3"))
-Excel = excel_gestion ("feuille1")
-Excel.ajout_feuille("feuille2")
-Excel.ecrire_excel(1,1,1, "TOTO")
-Excel.ecrire_excel(2,2,2,"TITI")
-Excel.creation("Test4")
+#print (lire_nom_feuille("Test3"))
+#Excel = excel_gestion ("feuille1")
+#Excel.ajout_feuille("feuille2")
+#Excel.ecrire_excel(1,1,1, "TOTO")
+#Excel.ecrire_excel(2,2,2,"TITI")
+#Excel.creation("Test4")
