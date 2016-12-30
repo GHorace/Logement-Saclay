@@ -15,7 +15,7 @@ class Building(Base):
     __tablename__ = 'buildings'
     id = Column(Integer, primary_key=True)
     bundles = relationship("Bundle", back_populates="building")
-    name = Column(String)
+    name = Column(String(32))
     newBuilding = Column(Boolean)
 
     def getDistanceTo(self, building):
@@ -28,7 +28,7 @@ class Bundle(Base):
     rooms = relationship("Room", back_populates="bundle")
     building_id = Column(Integer, ForeignKey('buildings.id'))
     building = relationship("Building", back_populates="bundles")
-    name = Column(String)
+    name = Column(String(32))
 
     def getDistanceTo(self, bundle):
         return 0
@@ -40,7 +40,7 @@ class Room(Base):
     residents = relationship("Resident", back_populates="room")
     bundle_id = Column(Integer, ForeignKey('bundles.id'))
     bundle = relationship("Bundle", back_populates="rooms")
-    name = Column(String)
+    name = Column(String(32))
     capacity = Column(Integer)
     pricePerResident = Column(Float)
 

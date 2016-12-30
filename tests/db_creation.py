@@ -4,8 +4,8 @@ import core.db as db
 
 engine = db.get_engine()
 
-#Base.metadata.create_all(engine)
-#marche pas avec ça
+Base.metadata.create_all(engine)
+
 
 
 
