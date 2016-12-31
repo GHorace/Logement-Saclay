@@ -9,7 +9,7 @@ import core.excel.excel_conv as conv
 engine = db.get_engine()
 Session = sessionmaker(bind=engine)
 
-
+# Remplit la table "rooms" à partir des données de Rooms.xlsx
 def get_rooms():
     session = Session()
     wb = xlrd.open_workbook("../docs/Rooms.xlsx")
@@ -26,6 +26,7 @@ def get_rooms():
         session.add(Room(id=id,residents=residents,bundle_id=bundle_id,name=name,capacity=capacity,pricePerResident=pricePerResident))
     session.commit()
 
+# Remplit la table "bundles" à partir des données de Bundles.xlsx
 def get_bundles():
     session = Session()
     wb = xlrd.open_workbook("../docs/Bundles.xlsx")
@@ -42,6 +43,7 @@ def get_bundles():
     session.commit()
 
 
+# Remplit la table "Buildings" à partir des données de Buildings.xlsx
 def get_buildings():
     session = Session()
     wb = xlrd.open_workbook("../docs/Buildings.xlsx")
@@ -58,6 +60,7 @@ def get_buildings():
     session.commit()
 
 
+# clean et remplit les tables "rooms", "bundles" et "buildings"
 def fill_in_db():
     session = Session()
     session.query(Room).delete()
