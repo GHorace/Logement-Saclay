@@ -8,7 +8,6 @@ class Resident(Base):
     __tablename__ = 'residents'
     id = Column(Integer, primary_key=True)
     room_id = Column(Integer, ForeignKey('rooms.id'))
-    room = relationship("Room", back_populates="residents")
 
 
 # Représente une réponse au questionnaire
